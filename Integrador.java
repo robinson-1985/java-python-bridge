@@ -6,14 +6,11 @@ public class Integrador {
         try {
             System.out.println("JAVA: Iniciando integração...");
             
-            // O comando que seria digitado no terminal do Ubuntu
-            String mensagemParaPython = "I am very happy with this Java and Python integration!";
+            String mensagemParaPython = "Eu estou muito feliz com o resultado deste código!";
             ProcessBuilder pb = new ProcessBuilder("python3", "script.py", mensagemParaPython);
             
-            // Inicia o processo
             Process processo = pb.start();
             
-            // Lê o que o Python imprimiu no terminal
             BufferedReader leitor = new BufferedReader(new InputStreamReader(processo.getInputStream()));
             String linha;
             
