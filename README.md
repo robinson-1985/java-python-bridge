@@ -19,6 +19,7 @@ This project showcases how to use Java's `ProcessBuilder` to trigger Python scri
 ### Prerequisites
 - JDK 17+
 - Python 3.x
+- Libraries: `pip install textblob deep-translator`
 
 ### Execution
 1. **Clone the repository:**
