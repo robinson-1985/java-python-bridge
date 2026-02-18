@@ -9,7 +9,6 @@ def analisar_sentimento():
         try:
             texto_en = GoogleTranslator(source='auto', target='en').translate(texto_original)
             
-            
             analise = TextBlob(texto_en)
             polaridade = analise.sentiment.polarity
             

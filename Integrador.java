@@ -6,7 +6,7 @@ public class Integrador {
         try {
             System.out.println("JAVA: Iniciando integração...");
             
-            String mensagemParaPython = "Eu estou muito feliz com o resultado deste código!";
+            String mensagemParaPython = "A programação é a arte de transformar ideias em código!";
             ProcessBuilder pb = new ProcessBuilder("python3", "script.py", mensagemParaPython);
             
             Process processo = pb.start();
