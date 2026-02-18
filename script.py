@@ -1,13 +1,23 @@
 import sys
+from textblob import TextBlob
 
-def processar():
-    # Verifica se o Java passou algum argumento
+def analisar_sentimento():
     if len(sys.argv) > 1:
-        texto_recebido = sys.argv[1]
-        resultado = f"PYTHON DIZ: Recebi '{texto_recebido.upper()}' e ele tem {len(texto_recebido)} letras."
-        print(resultado)
+        texto = sys.argv[1]
+        
+        analise = TextBlob(texto)
+        polaridade = analise.sentiment.polarity
+        
+        if polaridade > 0:
+            resultado = "POSITIVE 😊"
+        elif polaridade < 0:
+            resultado = "NEGATIVE 😡"
+        else:
+            resultado = "NEUTRAL 😐"
+            
+        print(f"SENTIMENT_RESULT|{resultado}|Score: {polaridade}")
     else:
-        print("PYTHON DIZ: Não recebi nenhuma mensagem do Java.")
+        print("ERROR|No text provided")
 
 if __name__ == "__main__":
-    processar()
+    analisar_sentimento()

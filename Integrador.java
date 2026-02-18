@@ -7,7 +7,7 @@ public class Integrador {
             System.out.println("JAVA: Iniciando integração...");
             
             // O comando que seria digitado no terminal do Ubuntu
-            String mensagemParaPython = "ola do java";
+            String mensagemParaPython = "I am very happy with this Java and Python integration!";
             ProcessBuilder pb = new ProcessBuilder("python3", "script.py", mensagemParaPython);
             
             // Inicia o processo
