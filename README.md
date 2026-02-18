@@ -1,29 +1,26 @@
-# 🌉 Java-Python Bridge
+# 🌉 Java-Python AI Bridge (Web API Edition)
 
-A polyglot proof-of-concept project demonstrating seamless integration between **Java (Backend/Orchestration)** and **Python (Data Processing/Scripts)** running on Ubuntu Linux.
+Este projeto demonstra uma arquitetura de microsserviços onde um cliente **Java** consome uma API de Inteligência Artificial escrita em **Python (FastAPI)** para análise de sentimentos com tradução automática.
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-E94333?style=for-the-badge&logo=ubuntu&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
 
-## 🚀 Overview
-This project showcases how to use Java's `ProcessBuilder` to trigger Python scripts, pass arguments, and capture real-time output. It's a fundamental pattern for hybrid architectures where Java handles the core logic and Python manages AI/Data tasks.
+## 🚀 Como Funciona
+1.  **Java Client:** Envia uma frase (em qualquer língua) via requisição HTTP GET.
+2.  **Python API:** Recebe o texto, traduz para o Inglês e utiliza **Processamento de Linguagem Natural (NLP)** para calcular a polaridade do sentimento.
+3.  **JSON Response:** A API retorna um objeto JSON com o sentimento (Positivo, Negativo ou Neutro) e o score da análise.
 
-## 🛠️ Features
-- **Inter-process communication:** Java as the orchestrator.
-- **Dynamic arguments:** Passing data from Java to Python at runtime.
-- **Ubuntu optimized:** Setup for Linux environments.
+## 🛠️ Tecnologias
+- **Java 17+**: HttpClient e codificação URI.
+- **Python 3.x**: FastAPI, Uvicorn, TextBlob (IA) e Deep Translator.
+- **Ubuntu Linux**: Ambiente de desenvolvimento e execução.
 
-## 📦 How to Run
+## 📦 Como Executar
 
-### Prerequisites
-- JDK 17+
-- Python 3.x
-- Para rodar, crie um venv e instale as dependências
-- Libraries: `pip install textblob deep-translator`
-
-### Execution
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/robinson-1985/java-python-bridge.git](https://github.com/robinson-1985/java-python-bridge.git)
-   cd java-python-bridge
+### 1. Servidor Python (API)
+```bash
+cd projeto-hibrido
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload
